@@ -1,10 +1,10 @@
-# Resources App :bow_and_arrow:
+# Resources App :open_book:
 The second project built in <ins>**Vue.js**</ins> within the scope of the <ins>Udemy Vue.js</ins> *(version 3)* course.
 
 <img src="https://cdn.pixabay.com/photo/2017/05/21/11/36/memo-2331062_960_720.jpg" width="1000" height="250">
 
 ## Introduction
-An app with a list of favorites learning resources and the option of adding or remove new items.
+An app with a list of favorite learning resources and the option of adding or remove new items.
 
 It has two tabs between which you can swap to see the `Stored Resources` list or your `Add Resource`.
 
