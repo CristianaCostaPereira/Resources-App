@@ -1,5 +1,5 @@
 # Resources App :open_book:
-The second project built in <ins>**Vue.js**</ins> within the scope of the <ins>Udemy Vue.js</ins> *(version 3)* course.
+The second project built in <ins>**Vue.js**</ins> *(version 3)* course within the scope of the [Vue-Udemy](https://github.com/CristianaCostaPereira/Vue-Udemy) repository.
 
 <img src="https://cdn.pixabay.com/photo/2017/05/21/11/36/memo-2331062_960_720.jpg" width="1000" height="250">
 
