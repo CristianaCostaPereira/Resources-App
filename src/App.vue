@@ -1,5 +1,5 @@
 <template>
-  <the-header title="Documentation"></the-header>
+  <the-header title="Resources Documents"></the-header>
   <the-resources></the-resources>
 </template>
 

@@ -1,4 +1,15 @@
 <template>
+  <error-message v-if="inputIsInvalid" title="Invalid Input" @close="confirmError">
+    <template v-slot:default>
+      <p>Sorry, one or more input is invalid.</p>
+      <p>Please make sure that at least one character is entered in each input.</p>
+    </template>
+
+    <template v-slot:actions>
+      <base-button @click="confirmError">Got it 😄 !</base-button>
+    </template>
+  </error-message>
+
   <base-card>
     <form @submit.prevent="submitData">
       <div class="form-control">
@@ -28,6 +39,12 @@ export default {
   // Allows to call my addResource method from theResources component in this component inside os submitData
   inject: ['addResource'],
 
+  data() {
+    return {
+      inputIsInvalid: false
+    };
+  },
+
   methods: {
     submitData() {
       // 3 values that the user enters
@@ -35,8 +52,24 @@ export default {
       const enteredDescription = this.$refs.descriptionInput.value;
       const enteredUrl = this.$refs.linkInput.value;
 
+      // trim() can be called on strings to removes the excess blanks that the user might enter in the input fields
+      if (
+        enteredTitle.trim() === '' ||
+        enteredDescription.trim() === '' ||
+        enteredUrl.trim() === ''
+      ) {
+        this.inputIsInvalid = true;
+        
+        // return to avoid this.addResouces to be executed, bacause return stops the function execution
+        return;
+      }
+
       this.addResource(enteredTitle, enteredDescription, enteredUrl);
     },
+
+    confirmError() {
+      this.inputIsInvalid = false;
+    }
   },
 }
 </script>
