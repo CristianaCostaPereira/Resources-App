@@ -1,19 +1,19 @@
 <template>
   <base-card>
-    <form>
+    <form @submit.prevent="submitData">
       <div class="form-control">
         <label for="title">Title</label>
-        <input id="title" name="title" type="text" />
+        <input id="title" name="title" type="text" ref="titleInput"/>
       </div>
 
       <div class="form-control">
         <label for="description">Description</label>
-        <textarea id="description" name="description" rows="3"></textarea>
+        <textarea id="description" name="description" rows="3" ref="descriptionInput"></textarea>
       </div>
 
       <div class="form-control">
         <label for="link">Link</label>
-        <input id="link" name="link" type="url" />
+        <input id="link" name="link" type="url" ref="linkInput"/>
       </div>
 
       <div>
@@ -22,6 +22,24 @@
     </form>
   </base-card>
 </template>
+
+<script>
+export default {
+  // Allows to call my addResource method from theResources component in this component inside os submitData
+  inject: ['addResource'],
+
+  methods: {
+    submitData() {
+      // 3 values that the user enters
+      const enteredTitle = this.$refs.titleInput.value;
+      const enteredDescription = this.$refs.descriptionInput.value;
+      const enteredUrl = this.$refs.linkInput.value;
+
+      this.addResource(enteredTitle, enteredDescription, enteredUrl);
+    },
+  },
+}
+</script>
 
 <style scoped>
 label {

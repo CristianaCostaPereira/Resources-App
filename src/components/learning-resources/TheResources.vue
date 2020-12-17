@@ -4,7 +4,9 @@
     <base-button @click="setSelectedTab('add-resource')" :mode="addResButton">Add Resources</base-button>
   </base-card>
 
-  <component :is="selectedTab"></component>
+  <keep-alive>
+    <component :is="selectedTab"></component>
+  </keep-alive>
 </template>
 
 <script>
@@ -41,7 +43,8 @@ export default {
 
   provide() {
     return{
-      resources: this.storedResources
+      resources: this.storedResources,
+      addResource: this.addResource
     };
   },
 
@@ -59,7 +62,23 @@ export default {
     // here, we get the tab that should be selected as our argument
     setSelectedTab(tab) {
       this.selectedTab = tab;
+    },
+
+    addResource(title, description, url) {
+      // Generates a new resource and add it to storedResources array whenever this method is trigger
+      const newResource = {
+        id: new Date().toISOString(),
+        title: title,
+        description: description,
+        link: url
+      };
+
+      // Our new resource that is added to the storedResources array by unshifting it (add to top of the array, unlike .push() that adds at the bottom)
+      this.storedResources.unshift(newResource);
+
+      // so that we switch the tab when we add a new resource
+      this.selectedTab = 'stored-resources';
     }
-  }
-}
+  },
+};
 </script>
