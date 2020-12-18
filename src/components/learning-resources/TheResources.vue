@@ -83,7 +83,7 @@ export default {
 
     removeResource(resId) {
       // Gives the index of the resource we want to delete
-      const resIndex = this.storedResources.findIndex(res => res.Id === resId);
+      const resIndex = this.storedResources.findIndex(res => res.id === resId);
 
       // removes the element at the defined index
       // Manipulates the original array instead of create a new one
