@@ -1,12 +1,14 @@
 <template>
-  <base-dialog v-if="inputIsInvalid" title="Invalid Input" @close="confirmError">
+  <base-dialog v-if="inputIsInvalid" title="Invalid Input ❌" @close="confirmError">
+
+    <!-- Provides content to my different slots -->
     <template v-slot:default>
-      <p>Sorry, one or more input is invalid.</p>
-      <p>Please make sure that at least one character is entered in each input.</p>
+      <p>Sorry, but one or more input value is invalid.</p>
+      <p>Please make sure that at least one character is entered into each input field.</p>
     </template>
 
     <template v-slot:actions>
-      <base-button @click="confirmError">Got it 😄 !</base-button>
+      <base-button @click="confirmError">Got it 😄</base-button>
     </template>
   </base-dialog>
 
@@ -68,7 +70,7 @@ export default {
     },
 
     confirmError() {
-      this.inputIsInvalid = false;
+      this.inputIsInvalid = false; // will close the dialog
     }
   },
 }

@@ -1,5 +1,5 @@
 <template>
-  <!-- So that we can click on the backdrop (any part of the app) and close the error message -->
+  <!-- So that we can click on the backdrop (the page behind the dialog is grey) and close the error message -->
   <div @click="$emit('close')"></div>
 
   <dialog open>
@@ -15,7 +15,7 @@
 
     <menu>
       <slot name="actions">
-        <base-button click="$emit('close')">Close</base-button>
+        <base-button @click="$emit('close')">Close</base-button>
       </slot>
     </menu>
   </dialog>
