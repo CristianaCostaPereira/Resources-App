@@ -62,7 +62,7 @@ dialog {
 }
 
 header {
-  background-color: #3a0061;
+  background-color: #00615c;
   color: white;
   width: 100%;
   padding: 1rem;
@@ -70,6 +70,7 @@ header {
 
 header h2 {
   margin: 0;
+  font-size: 25px;
 }
 
 section {
