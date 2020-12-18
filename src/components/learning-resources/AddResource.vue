@@ -1,17 +1,4 @@
 <template>
-  <base-dialog v-if="inputIsInvalid" title="Invalid Input ❌" @close="confirmError">
-
-    <!-- Provides content to my different slots -->
-    <template v-slot:default>
-      <p>Sorry, but one or more input value is invalid.</p>
-      <p>Please make sure that at least one character is entered into each input field.</p>
-    </template>
-
-    <template v-slot:actions>
-      <base-button @click="confirmError">Got it 😄</base-button>
-    </template>
-  </base-dialog>
-
   <base-card>
     <form @submit.prevent="submitData">
       <div class="form-control">
@@ -34,6 +21,19 @@
       </div>
     </form>
   </base-card>
+
+  <base-dialog v-if="inputIsInvalid" title="Invalid Input ❌" @close="confirmError">
+
+    <!-- Provides content to my different slots -->
+    <template v-slot:default>
+      <p>Sorry, but one or more input value is invalid.</p>
+      <p>Please make sure that at least one character is entered into each input field.</p>
+    </template>
+
+    <template v-slot:actions>
+      <base-button @click="confirmError">Got it 😄</base-button>
+    </template>
+  </base-dialog>
 </template>
 
 <script>
@@ -62,7 +62,7 @@ export default {
       ) {
         this.inputIsInvalid = true;
         
-        // return to avoid this.addResouces to be executed, bacause return stops the function execution
+        // return to avoid this.addResouces to be executed, because return stops the function execution
         return;
       }
 
