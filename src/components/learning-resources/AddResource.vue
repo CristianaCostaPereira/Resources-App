@@ -54,6 +54,11 @@ export default {
       const enteredDescription = this.$refs.descriptionInput.value;
       const enteredUrl = this.$refs.linkInput.value;
 
+      // To clean the inputs after data is saved to variable
+      this.$refs.titleInput.value = ''
+      this.$refs.descriptionInput.value = ''
+      this.$refs.linkInput.value = ''
+
       // trim() can be called on strings to removes the excess blanks that the user might enter in the input fields
       if (
         enteredTitle.trim() === '' ||
