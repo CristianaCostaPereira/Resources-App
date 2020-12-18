@@ -3,7 +3,8 @@
     <base-card>
       <header>
         <h3>{{ title }}</h3>
-        <base-button mode="flat" @click="deleteResource(id)">Delete</base-button>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+        <base-button mode="flat" @click="deleteResource(id)"><i class="far fa-trash-alt"></i></base-button>
       </header>
 
       <p>{{ description }}</p>
@@ -51,7 +52,7 @@ p {
 
 a {
   text-decoration: none;
-  color: #ce5c00;
+  color: #09919bc5;
 }
 
 a:hover,

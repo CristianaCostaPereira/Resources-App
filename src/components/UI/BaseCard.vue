@@ -11,5 +11,6 @@ div {
   padding: 1rem;
   margin: 2rem auto;
   max-width: 40rem;
+  background-color: rgb(241, 239, 240);
 }
 </style>

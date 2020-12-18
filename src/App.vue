@@ -28,5 +28,6 @@ html {
 
 body {
   margin: 0;
+  background-color: rgb(201, 201, 201);
 }
 </style>
