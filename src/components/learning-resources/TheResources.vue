@@ -42,9 +42,10 @@ export default {
   },
 
   provide() {
-    return{
+    return {
       resources: this.storedResources,
-      addResource: this.addResource
+      addResource: this.addResource,
+      deleteResource: this.removeResource
     };
   },
 
@@ -65,7 +66,7 @@ export default {
     },
 
     addResource(title, description, url) {
-      // Generates a new resource and add it to storedResources array whenever this method is trigger
+      // Generates a NEW resource and add it to storedResources array whenever this method is trigger
       const newResource = {
         id: new Date().toISOString(),
         title: title,
@@ -78,6 +79,15 @@ export default {
 
       // so that we switch the tab when we add a new resource
       this.selectedTab = 'stored-resources';
+    },
+
+    removeResource(resId) {
+      // Gives the index of the resource we want to delete
+      const resIndex = this.storedResources.findIndex(res => res.Id === resId);
+
+      // removes the element at the defined index
+      // Manipulates the original array instead of create a new one
+      this.storedResources.splice(resIndex, 1);
     }
   },
 };
