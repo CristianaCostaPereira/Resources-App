@@ -1,5 +1,5 @@
 <template>
-  <error-message v-if="inputIsInvalid" title="Invalid Input" @close="confirmError">
+  <base-dialog v-if="inputIsInvalid" title="Invalid Input" @close="confirmError">
     <template v-slot:default>
       <p>Sorry, one or more input is invalid.</p>
       <p>Please make sure that at least one character is entered in each input.</p>
@@ -8,7 +8,7 @@
     <template v-slot:actions>
       <base-button @click="confirmError">Got it 😄 !</base-button>
     </template>
-  </error-message>
+  </base-dialog>
 
   <base-card>
     <form @submit.prevent="submitData">
