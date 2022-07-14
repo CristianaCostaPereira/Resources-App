@@ -36,8 +36,8 @@ export default {
           title: 'Google',
           description: 'Learn to google...',
           link: 'https://google.pt'
-        },
-      ],
+        }
+      ]
     };
   },
 
