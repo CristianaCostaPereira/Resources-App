@@ -38,7 +38,7 @@
 
 <script>
 export default {
-  // Allows to call my addResource method from theResources component in this component inside os submitData
+  // Allows to call my addResource method from theResources component in this component inside of submitData
   inject: ['addResource'],
 
   data() {
@@ -66,7 +66,7 @@ export default {
         enteredUrl.trim() === ''
       ) {
         this.inputIsInvalid = true;
-        
+
         // return to avoid this.addResouces to be executed, because return stops the function execution
         return;
       }
