@@ -3,6 +3,11 @@ The second project built in <ins>**Vue.js**</ins> *(version 3)* course within th
 
 <img src="https://cdn.pixabay.com/photo/2017/05/21/11/36/memo-2331062_960_720.jpg" width="1000" height="250">
 
+## Demo
+[Resources App Demo](https://resources-list-app.netlify.app/)
+
+<br>
+
 ## Introduction
 App with a list of favorite learning resources and the option of adding or remove new items added.
 
